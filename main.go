@@ -26,7 +26,7 @@ func main() {
 		for _, row := range records {
 			if len(row) >= 11 {
 				amount := row[2]
-				if n, err := strconv.ParseFloat(amount, 32); err != nil || n < 0 {
+				if n, err := strconv.ParseFloat(amount, 32); err != nil && n != 0 {
 					continue
 				}
 				newRow := []string{
